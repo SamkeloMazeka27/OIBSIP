@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Temperature Converter | Samkelo Mazeka</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-wrapper">
+        
+        <!-- Main Container -->
+        <div class="app-container">
+            
+            <!-- Header -->
+            <div class="app-header">
+                <div class="logo">
+                    <h1>TempConvert <span>Pro</span></h1>
+                </div>
+                <button id="themeToggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+                    Dark
+                </button>
+            </div>
+
+            <!-- Main Converter Card -->
+            <div class="converter-card">
+                
+                <!-- Temperature Input -->
+                <div class="input-group">
+                    <label class="input-label">
+                        Enter Temperature
+                    </label>
+                    <input type="number" id="temperatureInput" class="temperature-input" placeholder="e.g., 25, 98.6, 300" step="any">
+                    <div id="inputError" class="error-message hidden">
+                        Please enter a valid number
+                    </div>
+                </div>
+
+                <!-- From Unit Selection -->
+                <div class="input-group">
+                    <label class="input-label">
+                        Convert From
+                    </label>
+                    <select id="fromUnit" class="unit-select">
+                        <option value="celsius">Celsius (°C)</option>
+                        <option value="fahrenheit">Fahrenheit (°F)</option>
+                        <option value="kelvin">Kelvin (K)</option>
+                    </select>
+                </div>
+
+                <!-- To Unit Selection -->
+                <div class="input-group">
+                    <label class="input-label">
+                        Convert To
+                    </label>
+                    <select id="toUnit" class="unit-select">
+                        <option value="celsius">Celsius (°C)</option>
+                        <option value="fahrenheit" selected>Fahrenheit (°F)</option>
+                        <option value="kelvin">Kelvin (K)</option>
+                    </select>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="button-group">
+                    <button id="convertBtn" class="btn btn-primary">
+                        Convert Now
+                    </button>
+                    <button id="resetBtn" class="btn btn-secondary">
+                        Reset
+                    </button>
+                </div>
+
+                <!-- Result Display -->
+                <div class="result-group">
+                    <label class="input-label">
+                        Converted Temperature
+                    </label>
+                    <div id="resultBox" class="result-box">
+                        <span id="resultValue" class="result-value">---</span>
+                        <span id="resultUnit" class="result-unit">°F</span>
+                    </div>
+                </div>
+
+                <!-- Formula Display -->
+                <div class="formula-card">
+                    <div class="formula-header">
+                        Conversion Formula
+                    </div>
+                    <div id="formulaDisplay" class="formula-text">
+                        (°C × 9/5) + 32 = °F
+                    </div>
+                </div>
+            </div>
+
+            <!-- History Section -->
+            <div class="history-card">
+                <div class="history-header">
+                    <div class="history-title">
+                        <h3>Conversion History</h3>
+                    </div>
+                    <button id="clearHistoryBtn" class="btn-clear">
+                        Clear All
+                    </button>
+                </div>
+                <div id="historyList" class="history-list">
+                    <div class="empty-history">
+                        <p>No conversions yet</p>
+                        <small>Convert something to see history</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer class="app-footer">
+                <p>© 2025 Samkelo Skhanyiso Mazeka | Oasis Infobyte Internship - Task 3</p>
+                <p class="footer-tag">Professional Temperature Converter | Celsius · Fahrenheit · Kelvin</p>
+            </footer>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

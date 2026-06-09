@@ -1,0 +1,513 @@
+/* ========== RESET & BASE STYLES ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #f0f2f5;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+/* ========== APP WRAPPER ========== */
+.app-wrapper {
+    max-width: 580px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* ========== APP CONTAINER ========== */
+.app-container {
+    background: transparent;
+}
+
+/* ========== HEADER ========== */
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    background: white;
+    padding: 16px 24px;
+    border-radius: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1a1a2e;
+}
+
+.logo h1 span {
+    color: #4c6ef5;
+    font-weight: 800;
+}
+
+.theme-toggle {
+    background: #f0f2f5;
+    border: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s;
+    color: #4c6ef5;
+}
+
+.theme-toggle:hover {
+    background: #e0e4e8;
+}
+
+/* ========== CONVERTER CARD ========== */
+.converter-card {
+    background: white;
+    border-radius: 24px;
+    padding: 28px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s;
+}
+
+/* ========== INPUT GROUPS ========== */
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #5a6874;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.temperature-input {
+    width: 100%;
+    padding: 16px;
+    font-size: 22px;
+    font-weight: 600;
+    border: 2px solid #e8edf2;
+    border-radius: 16px;
+    background: #fafbfc;
+    color: #1a1a2e;
+    text-align: center;
+    transition: all 0.3s;
+    font-family: 'Inter', monospace;
+}
+
+.temperature-input:focus {
+    outline: none;
+    border-color: #4c6ef5;
+    background: white;
+    box-shadow: 0 0 0 4px rgba(76, 110, 245, 0.1);
+}
+
+.temperature-input:hover {
+    border-color: #cbd5e1;
+}
+
+/* Unit Select */
+.unit-select {
+    width: 100%;
+    padding: 14px 16px;
+    font-size: 15px;
+    font-weight: 500;
+    border: 2px solid #e8edf2;
+    border-radius: 14px;
+    background: #fafbfc;
+    color: #1a1a2e;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.unit-select:focus {
+    outline: none;
+    border-color: #4c6ef5;
+    background: white;
+}
+
+.unit-select:hover {
+    border-color: #cbd5e1;
+}
+
+/* ========== BUTTONS ========== */
+.button-group {
+    display: flex;
+    gap: 12px;
+    margin: 24px 0;
+}
+
+.btn {
+    flex: 1;
+    padding: 14px 20px;
+    font-size: 15px;
+    font-weight: 600;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: 'Inter', sans-serif;
+}
+
+.btn-primary {
+    background: #4c6ef5;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #3b5bdb;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(76, 110, 245, 0.3);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+.btn-secondary {
+    background: #f0f2f5;
+    color: #5a6874;
+}
+
+.btn-secondary:hover {
+    background: #e4e8ec;
+    transform: translateY(-2px);
+}
+
+/* ========== RESULT DISPLAY ========== */
+.result-group {
+    margin-bottom: 20px;
+}
+
+.result-box {
+    background: linear-gradient(135deg, #f8f9fa, #f1f3f5);
+    border-radius: 20px;
+    padding: 28px;
+    text-align: center;
+    transition: all 0.3s;
+    border: 1px solid #e8edf2;
+}
+
+.result-box.animate {
+    animation: resultPop 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes resultPop {
+    0% {
+        transform: scale(1);
+        background: linear-gradient(135deg, #f8f9fa, #f1f3f5);
+    }
+    50% {
+        transform: scale(1.02);
+        background: linear-gradient(135deg, #e8ecf1, #e0e4e8);
+    }
+    100% {
+        transform: scale(1);
+        background: linear-gradient(135deg, #f8f9fa, #f1f3f5);
+    }
+}
+
+.result-value {
+    font-size: 52px;
+    font-weight: 800;
+    color: #4c6ef5;
+    letter-spacing: -1px;
+}
+
+.result-unit {
+    font-size: 24px;
+    font-weight: 600;
+    color: #5a6874;
+    margin-left: 8px;
+}
+
+/* ========== FORMULA CARD ========== */
+.formula-card {
+    background: #f8f9fa;
+    border-radius: 14px;
+    padding: 14px;
+    text-align: center;
+    border: 1px solid #e8edf2;
+}
+
+.formula-header {
+    font-size: 11px;
+    font-weight: 600;
+    color: #8a9aad;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+}
+
+.formula-text {
+    font-size: 12px;
+    font-family: 'Courier New', monospace;
+    font-weight: 600;
+    color: #4c6ef5;
+    background: white;
+    padding: 8px 12px;
+    border-radius: 10px;
+    display: inline-block;
+    width: auto;
+}
+
+/* ========== HISTORY SECTION ========== */
+.history-card {
+    background: white;
+    border-radius: 24px;
+    padding: 24px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #f0f2f5;
+}
+
+.history-title h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1a1a2e;
+}
+
+.btn-clear {
+    background: #fee2e2;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #e74c3c;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-clear:hover {
+    background: #fccaca;
+}
+
+.history-list {
+    max-height: 280px;
+    overflow-y: auto;
+}
+
+.history-item {
+    background: #fafbfc;
+    padding: 14px;
+    border-radius: 14px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s;
+    border: 1px solid #e8edf2;
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.history-item:hover {
+    background: #f1f3f5;
+    transform: translateX(3px);
+}
+
+.history-value {
+    font-weight: 600;
+    color: #1a1a2e;
+    font-size: 14px;
+}
+
+.history-date {
+    font-size: 10px;
+    color: #8a9aad;
+}
+
+.empty-history {
+    text-align: center;
+    padding: 40px 20px;
+    color: #8a9aad;
+}
+
+.empty-history p {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.empty-history small {
+    font-size: 11px;
+}
+
+/* ========== ERROR MESSAGE ========== */
+.error-message {
+    background: #fee2e2;
+    color: #e74c3c;
+    padding: 10px 14px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+.error-message.hidden {
+    display: none;
+}
+
+/* ========== FOOTER ========== */
+.app-footer {
+    text-align: center;
+    padding: 20px;
+}
+
+.app-footer p {
+    font-size: 11px;
+    color: #8a9aad;
+}
+
+.footer-tag {
+    margin-top: 6px;
+    font-size: 10px;
+    opacity: 0.7;
+}
+
+/* ========== DARK MODE ========== */
+body.dark-mode {
+    background: #1a1a2e;
+}
+
+body.dark-mode .app-header,
+body.dark-mode .converter-card,
+body.dark-mode .history-card {
+    background: #252541;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .logo h1 {
+    color: white;
+}
+
+body.dark-mode .temperature-input,
+body.dark-mode .unit-select {
+    background: #1e1e3a;
+    border-color: #3a3a5a;
+    color: white;
+}
+
+body.dark-mode .temperature-input:focus {
+    border-color: #4c6ef5;
+}
+
+body.dark-mode .result-box {
+    background: linear-gradient(135deg, #1e1e3a, #252541);
+    border-color: #3a3a5a;
+}
+
+body.dark-mode .result-value {
+    color: #7b92ff;
+}
+
+body.dark-mode .formula-card {
+    background: #1e1e3a;
+    border-color: #3a3a5a;
+}
+
+body.dark-mode .formula-text {
+    background: #252541;
+    color: #7b92ff;
+}
+
+body.dark-mode .history-item {
+    background: #1e1e3a;
+    border-color: #3a3a5a;
+}
+
+body.dark-mode .history-value {
+    color: #e0e0e0;
+}
+
+body.dark-mode .btn-secondary {
+    background: #1e1e3a;
+    color: #b0b0d0;
+}
+
+body.dark-mode .btn-secondary:hover {
+    background: #2a2a4a;
+}
+
+body.dark-mode .theme-toggle {
+    background: #1e1e3a;
+    color: #7b92ff;
+}
+
+body.dark-mode .theme-toggle:hover {
+    background: #2a2a4a;
+}
+
+body.dark-mode .input-label {
+    color: #b0b0d0;
+}
+
+body.dark-mode .empty-history {
+    color: #8a8aaa;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 500px) {
+    body {
+        padding: 20px 15px;
+    }
+    
+    .converter-card,
+    .history-card {
+        padding: 20px;
+    }
+    
+    .result-value {
+        font-size: 36px;
+    }
+    
+    .result-unit {
+        font-size: 18px;
+    }
+    
+    .button-group {
+        flex-direction: column;
+    }
+    
+    .logo h1 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .history-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 8px;
+    }
+    
+    .result-value {
+        font-size: 28px;
+    }
+}

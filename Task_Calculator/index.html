@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Calculator | Samkelo Mazeka</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="calculator-container">
+        
+        <!-- Calculator Card -->
+        <div class="calculator-card">
+            
+            <!-- Display Screen -->
+            <div class="display-screen">
+                <div class="expression" id="expression">0</div>
+                <div class="result" id="result"></div>
+            </div>
+
+            <!-- Button Grid -->
+            <div class="buttons-grid">
+                
+                <!-- Row 1: Special Functions -->
+                <button class="btn btn-special" data-action="clear">C</button>
+                <button class="btn btn-special" data-action="delete">DEL</button>
+                <button class="btn btn-special" data-action="percent">%</button>
+                <button class="btn btn-operator" data-operator="/">÷</button>
+
+                <!-- Row 2: Numbers 7,8,9 -->
+                <button class="btn btn-number" data-number="7">7</button>
+                <button class="btn btn-number" data-number="8">8</button>
+                <button class="btn btn-number" data-number="9">9</button>
+                <button class="btn btn-operator" data-operator="*">×</button>
+
+                <!-- Row 3: Numbers 4,5,6 -->
+                <button class="btn btn-number" data-number="4">4</button>
+                <button class="btn btn-number" data-number="5">5</button>
+                <button class="btn btn-number" data-number="6">6</button>
+                <button class="btn btn-operator" data-operator="-">-</button>
+
+                <!-- Row 4: Numbers 1,2,3 -->
+                <button class="btn btn-number" data-number="1">1</button>
+                <button class="btn btn-number" data-number="2">2</button>
+                <button class="btn btn-number" data-number="3">3</button>
+                <button class="btn btn-operator" data-operator="+">+</button>
+
+                <!-- Row 5: Zero, Decimal, Sign, Equals -->
+                <button class="btn btn-number zero-btn" data-number="0">0</button>
+                <button class="btn btn-number" data-number=".">.</button>
+                <button class="btn btn-special" data-action="sign">±</button>
+                <button class="btn btn-equals" data-action="equals">=</button>
+
+            </div>
+
+            <!-- Additional Functions Row -->
+            <div class="extra-buttons">
+                <button class="btn-extra" data-action="openParen">(</button>
+                <button class="btn-extra" data-action="closeParen">)</button>
+                <button class="btn-extra" data-action="ans">ANS</button>
+                <button class="btn-extra" data-action="clearAll">AC</button>
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <footer class="calculator-footer">
+            <p>Samkelo Skhanyiso Mazeka | Oasis Infobyte Internship</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

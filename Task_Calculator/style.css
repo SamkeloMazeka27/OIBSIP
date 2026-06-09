@@ -1,0 +1,214 @@
+/* ========== RESET & BASE STYLES ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* ========== CALCULATOR CONTAINER ========== */
+.calculator-container {
+    max-width: 450px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* ========== CALCULATOR CARD ========== */
+.calculator-card {
+    background: #1a1a2e;
+    border-radius: 32px;
+    padding: 24px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* ========== DISPLAY SCREEN ========== */
+.display-screen {
+    background: #0f0f1a;
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 24px;
+    text-align: right;
+    min-height: 120px;
+}
+
+.expression {
+    font-size: 18px;
+    color: #8a9aad;
+    word-wrap: break-word;
+    word-break: break-all;
+    min-height: 30px;
+    font-weight: 500;
+}
+
+.result {
+    font-size: 42px;
+    color: white;
+    font-weight: 700;
+    word-wrap: break-word;
+    word-break: break-all;
+    margin-top: 10px;
+    letter-spacing: -1px;
+}
+
+/* ========== BUTTONS GRID ========== */
+.buttons-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.btn {
+    padding: 18px 0;
+    font-size: 20px;
+    font-weight: 600;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'Inter', sans-serif;
+}
+
+.btn-number {
+    background: #2a2a4a;
+    color: white;
+}
+
+.btn-number:hover {
+    background: #3a3a5a;
+    transform: translateY(-2px);
+}
+
+.btn-operator {
+    background: #4c6ef5;
+    color: white;
+}
+
+.btn-operator:hover {
+    background: #3b5bdb;
+    transform: translateY(-2px);
+}
+
+.btn-special {
+    background: #2a2a4a;
+    color: #ff8787;
+}
+
+.btn-special:hover {
+    background: #3a3a5a;
+    transform: translateY(-2px);
+}
+
+.btn-equals {
+    background: #4c6ef5;
+    color: white;
+    font-size: 22px;
+}
+
+.btn-equals:hover {
+    background: #3b5bdb;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(76, 110, 245, 0.4);
+}
+
+.zero-btn {
+    grid-column: span 1;
+}
+
+/* ========== EXTRA BUTTONS ========== */
+.extra-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.btn-extra {
+    padding: 14px 0;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+    background: #252545;
+    color: #b0b0d0;
+    font-family: 'Inter', sans-serif;
+}
+
+.btn-extra:hover {
+    background: #353555;
+    transform: translateY(-2px);
+}
+
+/* ========== BUTTON ACTIVE STATE ========== */
+.btn:active,
+.btn-extra:active {
+    transform: translateY(0);
+    opacity: 0.8;
+}
+
+/* ========== FOOTER ========== */
+.calculator-footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 12px;
+}
+
+.calculator-footer p {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+@media (max-width: 480px) {
+    .calculator-card {
+        padding: 16px;
+    }
+    
+    .btn {
+        padding: 14px 0;
+        font-size: 18px;
+    }
+    
+    .result {
+        font-size: 32px;
+    }
+    
+    .expression {
+        font-size: 14px;
+    }
+    
+    .buttons-grid {
+        gap: 8px;
+    }
+    
+    .extra-buttons {
+        gap: 8px;
+    }
+    
+    .btn-extra {
+        padding: 10px 0;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 380px) {
+    .btn {
+        padding: 12px 0;
+        font-size: 16px;
+    }
+    
+    .result {
+        font-size: 28px;
+    }
+}
