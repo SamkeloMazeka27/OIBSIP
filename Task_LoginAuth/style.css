@@ -1,0 +1,375 @@
+/* ========== RESET & BASE ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #f5f7fa;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+.app-container {
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* ========== HEADER ========== */
+.app-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.app-header h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #1a1a2e;
+    letter-spacing: -0.5px;
+}
+
+.app-header p {
+    color: #6c757d;
+    margin-top: 8px;
+}
+
+/* ========== AUTH CONTAINER ========== */
+.auth-container {
+    background: white;
+    border-radius: 20px;
+    padding: 32px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e9ecef;
+}
+
+/* Auth Tabs */
+.auth-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 28px;
+    border-bottom: 2px solid #f0f2f5;
+    padding-bottom: 10px;
+}
+
+.tab-btn {
+    flex: 1;
+    background: transparent;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #6c757d;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: 'Inter', sans-serif;
+    border-radius: 10px;
+}
+
+.tab-btn.active {
+    background: #4c6ef5;
+    color: white;
+}
+
+/* Auth Forms */
+.auth-form {
+    display: none;
+}
+
+.auth-form.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.auth-form h2 {
+    font-size: 1.6rem;
+    color: #1a1a2e;
+    margin-bottom: 6px;
+}
+
+.form-subtitle {
+    color: #6c757d;
+    margin-bottom: 24px;
+}
+
+/* Form Elements */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #495057;
+    margin-bottom: 8px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 15px;
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.3s;
+    background: white;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #4c6ef5;
+    box-shadow: 0 0 0 3px rgba(76, 110, 245, 0.1);
+}
+
+.auth-btn {
+    width: 100%;
+    background: #4c6ef5;
+    color: white;
+    border: none;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: 'Inter', sans-serif;
+    margin-top: 10px;
+}
+
+.auth-btn:hover {
+    background: #3b5bdb;
+}
+
+.form-footer {
+    text-align: center;
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid #e9ecef;
+}
+
+.form-footer p {
+    color: #6c757d;
+    font-size: 14px;
+}
+
+.link-text {
+    color: #4c6ef5;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.link-text:hover {
+    text-decoration: underline;
+}
+
+/* ========== DASHBOARD ========== */
+.dashboard-container {
+    margin-top: 30px;
+}
+
+.dashboard-card {
+    background: white;
+    border-radius: 20px;
+    padding: 32px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e9ecef;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #f0f2f5;
+    margin-bottom: 24px;
+}
+
+.dashboard-header h2 {
+    font-size: 1.5rem;
+    color: #1a1a2e;
+}
+
+.dashboard-header h2 span {
+    color: #4c6ef5;
+}
+
+.logout-btn {
+    background: #ef4444;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.logout-btn:hover {
+    background: #dc2626;
+}
+
+.secure-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #f8f9fa;
+    padding: 8px 16px;
+    border-radius: 30px;
+    margin-bottom: 20px;
+    border: 1px solid #e9ecef;
+}
+
+.secure-badge .lock-icon {
+    font-size: 14px;
+}
+
+.secure-badge span {
+    color: #10b981;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.dashboard-content p {
+    color: #6c757d;
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+.user-info {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 16px;
+    margin-top: 20px;
+    border: 1px solid #e9ecef;
+}
+
+.user-info h3 {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    color: #1a1a2e;
+}
+
+.info-row {
+    display: flex;
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+
+.info-label {
+    width: 110px;
+    font-weight: 600;
+    color: #495057;
+}
+
+.info-value {
+    color: #1a1a2e;
+}
+
+/* ========== TOAST NOTIFICATIONS ========== */
+#toastContainer {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.toast {
+    background: white;
+    padding: 14px 24px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+    transform: translateX(400px);
+    transition: transform 0.3s ease;
+    font-size: 14px;
+    font-weight: 500;
+    border-left: 4px solid;
+    border: 1px solid #e9ecef;
+    border-left-width: 4px;
+}
+
+.toast.show {
+    transform: translateX(0);
+}
+
+.toast-success {
+    border-left-color: #10b981;
+}
+.toast-success .toast-icon { color: #10b981; }
+
+.toast-error {
+    border-left-color: #ef4444;
+}
+.toast-error .toast-icon { color: #ef4444; }
+
+.toast-warning {
+    border-left-color: #f59e0b;
+}
+.toast-warning .toast-icon { color: #f59e0b; }
+
+.toast-info {
+    border-left-color: #4c6ef5;
+}
+.toast-info .toast-icon { color: #4c6ef5; }
+
+.toast-icon {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+/* ========== HIDDEN CLASS ========== */
+.hidden {
+    display: none;
+}
+
+/* ========== FOOTER ========== */
+.app-footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.app-footer p {
+    font-size: 11px;
+    color: #adb5bd;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 550px) {
+    .auth-container, .dashboard-card {
+        padding: 24px;
+    }
+    
+    .dashboard-header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .info-row {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .info-label {
+        width: auto;
+    }
+}
